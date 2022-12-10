@@ -19,7 +19,13 @@
     enable = true;
     enableBashIntegration = true;
   };
-  home.file.".dir_colors".source = ./config/dircolors/.dircolors;
+  home.file.".dir_colors".source = pkgs.fetchFromGitHub
+    {
+      owner = "dracula";
+      repo = "dircolors";
+      rev = "057d17917f04ac258d5333416897a30a2d2b89ad";
+      sha256 = "sha256-gvBlTIDJYxlgEo0tWPOeWqDvnT1M0ICDpXzekF/+lEs=";
+    } + "/.dircolors";
 
   programs.powerline-go = {
     enable = true;
