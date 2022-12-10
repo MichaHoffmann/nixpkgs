@@ -13,6 +13,8 @@
     silver-searcher
     wl-clipboard
   ];
+  targets.genericLinux.enable = true;
+
   programs.home-manager.enable = true;
 
   programs.dircolors = {
@@ -40,11 +42,6 @@
     shellAliases = {
       ll = "ls -GFlha --color";
     };
-    bashrcExtra = ''
-      if [ -e /var/home/mhoffm/.nix-profile/etc/profile.d/nix.sh ]; then . /var/home/mhoffm/.nix-profile/etc/profile.d/nix.sh; fi
-
-      . /var/home/mhoffm/.profile
-    '';
   };
 
   programs.fzf = {
