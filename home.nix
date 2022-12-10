@@ -5,14 +5,16 @@
   home.homeDirectory = "/var/home/mhoffm";
   home.stateVersion = "22.11";
   home.packages = with pkgs; [
-    gcc
     brightnessctl
+    cargo
+    gcc
+    go
     powertop
+    silver-searcher
     wl-clipboard
   ];
   programs.home-manager.enable = true;
 
-  # Bash
   programs.dircolors = {
     enable = true;
     enableBashIntegration = true;
@@ -33,6 +35,10 @@
     bashrcExtra = ''
       if [ -e /var/home/mhoffm/.nix-profile/etc/profile.d/nix.sh ]; then . /var/home/mhoffm/.nix-profile/etc/profile.d/nix.sh; fi
     '';
+  };
+
+  programs.fzf = {
+    enable = true;
   };
 
   programs.git = {
