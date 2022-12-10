@@ -19,7 +19,7 @@
     enable = true;
     enableBashIntegration = true;
   };
-  home.file.".dircolors".source = ./config/dircolors/.dircolors;
+  home.file.".dir_colors".source = ./config/dircolors/.dircolors;
 
   programs.powerline-go = {
     enable = true;
@@ -34,6 +34,8 @@
     };
     bashrcExtra = ''
       if [ -e /var/home/mhoffm/.nix-profile/etc/profile.d/nix.sh ]; then . /var/home/mhoffm/.nix-profile/etc/profile.d/nix.sh; fi
+
+      . /var/home/mhoffm/.profile
     '';
   };
 
@@ -69,7 +71,6 @@
   programs.gpg.enable = true;
   services.gpg-agent = {
     enable = true;
-    enableSshSupport = true;
   };
 
   programs.password-store.enable = true;
