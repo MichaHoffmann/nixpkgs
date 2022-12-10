@@ -1,0 +1,66 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 20,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-right": ["network", "memory", "temperature", "cpu", "battery", "backlight", "clock", "tray"],
+
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll-wraparound": true,
+        "enable-bar-scroll": true,
+        "smooth-scrolling-threshold": 30
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%d-%m-%yT%H:%M:%S}",
+        "interval": 5,
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{icon} {capacity}% {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": " {capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""],
+        "tooltip": false
+    },
+    "cpu": {
+        "format": " {usage1}% {usage2}% {usage3}% {usage4}%",
+        "interval": 2,
+        "tooltip": false
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C "
+    },
+    "memory": {
+        "format": " {used:0.1f}G / {total:0.1f}G",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": " {bandwidthDownBits}  {bandwidthUpBits} ",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interface": "wlp170s0",
+        "interval": 5,
+        "tooltip": false
+    }
+}

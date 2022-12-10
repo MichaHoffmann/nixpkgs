@@ -1,0 +1,67 @@
+* {
+    border: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+    margin: 0 0px;
+    color: white;
+}
+
+window#waybar {
+    background: black;
+    font-weight: 500;
+}
+
+window .modules-left #workspaces button {
+    min-width: 10px;
+}
+
+
+window .modules-left #workspaces button.focused {
+    background-color: gray;
+}
+
+#clock {
+    border: 1px solid gray;
+    min-width: 150px;
+}
+
+#battery {
+    border: 1px solid gray;
+    min-width: 150px;
+}
+
+#battery.critical {
+    color: red;
+    min-width: 150px;
+}
+
+#battery.full {
+    color: green;
+    min-width: 150px;
+}
+
+#cpu {
+    border: 1px solid gray;
+    min-width: 150px;
+}
+
+#network {
+    border: 1px solid gray;
+    min-width: 200px;
+}
+
+#memory {
+    border: 1px solid gray;
+    min-width: 150px;
+}
+
+#temperature {
+    border: 1px solid gray;
+    min-width: 150px;
+}
+
+#backlight {
+    border: 1px solid gray;
+    min-width: 150px;
+}
