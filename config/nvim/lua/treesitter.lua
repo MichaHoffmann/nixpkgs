@@ -1,6 +1,7 @@
-local parser_config = require('nvim-treesitter.configs')
+local treesitter = require('nvim-treesitter.configs')
 
-parser_config.setup {
+treesitter.setup {
+  ensure_installed = "all",
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,

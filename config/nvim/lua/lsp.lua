@@ -18,7 +18,7 @@ end
 
 
 -- Setup lspconfig.
-require("fidget").setup {}
+require("fidget").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({ automatic_installation = true })
 
@@ -50,7 +50,7 @@ lspcfg["pylsp"].setup {
 }
 
 -- non python lsps
-local lsps = { "gopls", "elmls", "rust_analyzer", "sumneko_lua", "tsserver", "clangd", "rnix", "hls"}
+local lsps = { "gopls", "elmls", "rust_analyzer", "sumneko_lua", "tsserver", "clangd", "rnix" }
 
 for i in pairs(lsps) do
   lspcfg[lsps[i]].setup {

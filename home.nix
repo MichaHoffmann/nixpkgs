@@ -9,12 +9,16 @@
     cargo
     gcc
     go
+    nodejs
     powertop
     silver-searcher
     wl-clipboard
   ];
+  home.shellAliases = {
+    ls = "ls -a --color";
+    ll = "ls -la --color";
+  };
   targets.genericLinux.enable = true;
-
   programs.home-manager.enable = true;
 
   programs.dircolors = {
@@ -37,14 +41,12 @@
     modules = [ "host" "ssh" "cwd" "gitlite" "jobs" "nix-shell" ];
   };
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -GFlha --color";
-    };
-  };
-
-  programs.fzf = {
+  programs.bash.enable = true;
+  programs.fzf.enable = true;
+  programs.jq.enable = true;
+  programs.password-store.enable = true;
+  programs.gpg.enable = true;
+  services.gpg-agent = {
     enable = true;
   };
 
@@ -73,13 +75,6 @@
     recursive = true;
   };
 
-  programs.gpg.enable = true;
-  services.gpg-agent = {
-    enable = true;
-  };
-
-  programs.password-store.enable = true;
-
   # Flatpak Wrappers
   home.file.".flatpak" = {
     source = ./config/flatpak/.flatpak;
@@ -96,6 +91,7 @@
     recursive = true;
   };
   xdg.configFile.alacritty = {
+    # TODO: fetch color scheme from github 
     source = ./config/alacritty;
     recursive = true;
   };
