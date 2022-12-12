@@ -22,6 +22,8 @@ return require('packer').startup(function()
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
   use { 'j-hui/fidget.nvim' }
+  use { 'jose-elias-alvarez/null-ls.nvim' }
+
 
   -- telescope for searching and navigation
   use {
