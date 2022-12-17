@@ -13,10 +13,8 @@
 
   imports = [
     ./nvim.nix
-    ./git.nix
-    ./gpg.nix
     ./wm.nix
-    ./shell.nix
+    ./programs.nix
   ];
 
   # Session Variables

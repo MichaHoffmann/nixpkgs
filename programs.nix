@@ -46,4 +46,35 @@ in
   programs.fzf.enable = true;
   programs.jq.enable = true;
   programs.password-store.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "Michael Hoffmann";
+    userEmail = "mhoffm@posteo.de";
+
+    extraConfig = {
+      signing = {
+        key = "643EE7190C2D8F047D46A0A3E0DBDF3D046F608E!";
+        signByDefault = true;
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      commit = {
+        gpgsign = true;
+      };
+      push = {
+        autoSetupRemote = true;
+      };
+    };
+  };
+
+  programs.gpg.enable = true;
+  services.gpg-agent = {
+    enable = true;
+    enableBashIntegration = true;
+    enableSshSupport = true;
+    enableExtraSocket = true;
+    sshKeys = [ "8EA14B669807C630BE4DD610CEB5CE1483F7FC79" ];
+  };
 }
