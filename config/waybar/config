@@ -59,7 +59,6 @@
         "format-linked": " {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "interface": "wlp170s0",
         "interval": 5,
         "tooltip": false
     }

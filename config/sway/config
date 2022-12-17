@@ -9,6 +9,7 @@ set {
   $term alacritty
   $menu dmenu_path | dmenu | xargs swaymsg exec
   $pass ~/.config/sway/dmenu_pass | dmenu | pass -c $(</dev/stdin)
+  $flatpak  ~/.config/sway/dmenu_flatpak | dmenu | flatpak --user run $(</dev/stdin)
   $kill ps -e -o comm | dmenu -l 30 | xargs kill -9
   $bg /usr/share/backgrounds/default.png 
 }
@@ -22,9 +23,6 @@ output eDP-1 {
 ### Input configuration
 input * {
     xkb_layout de
-}
-
-input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     tap enabled
 }
 
@@ -51,6 +49,7 @@ bindsym {
   # Start your launcher
   $mod+p exec $menu
   $mod+m exec $pass
+  $mod+i exec $flatpak
   $mod+Shift+p exec $kill
 
   # Reload the configuration file
