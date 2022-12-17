@@ -1,31 +1,9 @@
 { config, pkgs, ... }:
 
-let
-
-  pw-volume = pkgs.rustPlatform.buildRustPackage {
-    name = "pw-volume";
-    src = pkgs.fetchFromGitHub {
-      owner = "smasher164";
-      repo = "pw-volume";
-      rev = "be104eaaeb84def26b392cc44bb1e7b880bef0fc";
-      hash = "sha256-mFvXpz2Iire3Tcv15HVqCLFRKFjVJ7+hlHn9Yb8QKTU=";
-    };
-    cargoHash = "sha256-Bf7B1ehAAqAcnogRei/UnD0gY0MvImjbjqjb6fnaBHc=";
-  };
-
-in
-
 {
   home.username = "mhoffm";
   home.homeDirectory = "/var/home/mhoffm";
   home.stateVersion = "22.11";
-  home.packages = with pkgs; [
-    brightnessctl
-    flameshot
-    silver-searcher
-    pw-volume
-    wl-clipboard
-  ];
   home.shellAliases = {
     ls = "ls -a --color";
     ll = "ls -la --color";
