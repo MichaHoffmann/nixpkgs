@@ -15,6 +15,7 @@
     ./nvim.nix
     ./wm.nix
     ./programs.nix
+    ./systemd.nix
   ];
 
   # Session Variables

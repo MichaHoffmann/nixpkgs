@@ -22,6 +22,11 @@ in
     wl-clipboard
   ];
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
   programs.dircolors = {
     enable = true;
     enableBashIntegration = true;
@@ -52,7 +57,7 @@ in
     userName = "Michael Hoffmann";
     userEmail = "mhoffm@posteo.de";
 
-    ignores = [ "shell.nix" ];
+    ignores = [ "shell.nix" ".envrc" ".direnv" ];
 
     extraConfig = {
       signing = {
