@@ -52,6 +52,8 @@ in
     userName = "Michael Hoffmann";
     userEmail = "mhoffm@posteo.de";
 
+    ignores = [ "shell.nix" ];
+
     extraConfig = {
       signing = {
         key = "643EE7190C2D8F047D46A0A3E0DBDF3D046F608E!";
