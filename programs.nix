@@ -18,6 +18,7 @@ in
     brightnessctl
     flameshot
     silver-searcher
+    strace
     pw-volume
     wl-clipboard
   ];
@@ -60,9 +61,8 @@ in
     ignores = [ "shell.nix" ".envrc" ".direnv" ];
 
     extraConfig = {
-      signing = {
-        key = "643EE7190C2D8F047D46A0A3E0DBDF3D046F608E!";
-        signByDefault = true;
+      user = {
+        signingKey = "E0DBDF3D046F608E";
       };
       init = {
         defaultBranch = "main";
