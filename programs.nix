@@ -18,10 +18,19 @@ in
     brightnessctl
     flameshot
     silver-searcher
-    strace
     pw-volume
     wl-clipboard
+    cloudflared
   ];
+
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      "sshrbp1.mhoffm.org" = {
+        proxyCommand = "cloudflared access ssh --hostname %h";
+      };
+    };
+  };
 
   programs.direnv = {
     enable = true;
@@ -52,13 +61,17 @@ in
   programs.fzf.enable = true;
   programs.jq.enable = true;
   programs.password-store.enable = true;
-
   programs.git = {
     enable = true;
     userName = "Michael Hoffmann";
     userEmail = "mhoffm@posteo.de";
 
     ignores = [ "shell.nix" ".envrc" ".direnv" ];
+
+    difftastic = {
+      enable = true;
+      display = "inline";
+    };
 
     extraConfig = {
       user = {
@@ -82,6 +95,11 @@ in
     enableBashIntegration = true;
     enableSshSupport = true;
     enableExtraSocket = true;
-    sshKeys = [ "8EA14B669807C630BE4DD610CEB5CE1483F7FC79" ];
+    sshKeys = [ "53A3B88A4BC22A46BD7F15BD18BE420E065F69DC" ];
+
+    defaultCacheTtl = 6 * 3600;
+    defaultCacheTtlSsh = 6 * 3600;
+    pinentryFlavor = "gnome3";
   };
+
 }

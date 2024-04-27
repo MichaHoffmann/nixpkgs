@@ -11,7 +11,7 @@ set {
   $pass ~/.config/sway/dmenu_pass | dmenu | pass -c $(</dev/stdin)
   $flatpak  ~/.config/sway/dmenu_flatpak | dmenu | flatpak --user run $(</dev/stdin)
   $kill ps -e -o comm | dmenu -l 30 | xargs kill -9
-  $bg /usr/share/backgrounds/default.png 
+  $bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png
 }
 
 ### Output configuration

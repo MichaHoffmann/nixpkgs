@@ -5,8 +5,8 @@
   home.homeDirectory = "/var/home/mhoffm";
   home.stateVersion = "22.11";
   home.shellAliases = {
-    ls = "ls -a --color";
-    ll = "ls -la --color";
+    ls = "ls -ha --color -v --group-directories-first";
+    ll = "ls -lha --color -v --group-directories-first";
   };
   targets.genericLinux.enable = true;
   programs.home-manager.enable = true;
@@ -21,7 +21,7 @@
   # Session Variables
   systemd.user.sessionVariables = {
     # so sway can access path
-    PATH = "$HOME/.nix-profile/bin:/bin:$PATH";
+    PATH = "$HOME/go/bin:$HOME/.local/bin:$HOME/.nix-profile/bin:/bin:$PATH";
     # we want neovim for everything
     EDITOR = "nvim";
     # sway needs those
