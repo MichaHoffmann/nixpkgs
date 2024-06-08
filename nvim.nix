@@ -50,7 +50,6 @@ in
       gopls
 
       # nix
-      rnix-lsp
       statix
 
       # ocaml

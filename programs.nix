@@ -99,7 +99,7 @@ in
 
     defaultCacheTtl = 6 * 3600;
     defaultCacheTtlSsh = 6 * 3600;
-    pinentryFlavor = "gnome3";
+    pinentryPackage = pkgs.pinentry-gnome3;
   };
 
 }
